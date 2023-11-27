@@ -24,6 +24,17 @@ class PVZ_USFX_LAB02_API IEstrategia_Zombie_Principal
 	// Add interface functions to this class. This is the class that will be inherited to implement this interface.
 public:
 
+	TArray<FString> Strategies = { "Estrategia_Zombie_Curacion", "Estrategia_Zombie_Explocion", "Estrategia_Zombie_Inmune", "Estrategia_Zombie_Normal", "Estrategia_Zombie_Tranquilo" };
+	FRandomStream RandomStream;
+
+
+	FString GenerateRandomStrategy() ;
+	
+
+	
+
+
+
 	virtual void Explotar(AZombie_Explosivo* ZombieActual) = 0;
 
 	virtual void Curacion(AZombie_Explosivo* ZombieActual) = 0;

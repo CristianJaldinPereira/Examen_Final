@@ -71,6 +71,7 @@ void AZombie_Explosivo::ActualizarZombies(APublicador_Zombies* Publicador_Zombie
 
 void AZombie_Explosivo::Mutar()
 {
+ 
 	FString Estado = Notificador_1->GetEstado();
 
 	if (!Estado.Compare("Tranquilo"))
@@ -90,6 +91,8 @@ void AZombie_Explosivo::Mutar()
 		Estrategia = EstrategiaCuracion;
 		LLamarCurar();
 	}
+	
+
 
 }
 

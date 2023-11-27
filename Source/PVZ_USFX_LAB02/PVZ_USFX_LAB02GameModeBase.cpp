@@ -183,6 +183,7 @@ void APVZ_USFX_LAB02GameModeBase::BeginPlay()
 
 		NuevoZombieExplosivo->DefinirNotificadorZombies(NotificadorZombies_1);
 
+
 	}
 
 	
@@ -305,10 +306,12 @@ void APVZ_USFX_LAB02GameModeBase::Tick(float DeltaTime)
 		{
 			NotificadorZombies_1->DefinirEstado("Curacion");
 		}
-		else if (ZombiesExplosivos[i]->energia >= 100)
+		
+		else if (ZombiesExplosivos[i]->energia == 100)
 		{
 			NotificadorZombies_1->DefinirEstado("Tranquilo");
 		}
+		
 	}
 
 

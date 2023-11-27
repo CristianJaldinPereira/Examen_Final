@@ -33,6 +33,13 @@ public:
 	virtual void BeginPlay() override;
 
 	virtual void Tick(float DeltaTime) override;
+public:
+
+	AEstrategia_Zombie_Explocion* EstrategiaExplosivo;
+	AEstrategia_Zombie_Tranquilo* EstrategiaTranquilo;
+	AEstrategia_Zombie_Curacion* EstrategiaCuracion;
+	AEstrategia_Zombie_Inmune* EstrategiaInmune;
+	AEstrategia_Zombie_Normal* EstrategiaNormal;
 
 public: 
 
@@ -46,8 +53,23 @@ public:
 
 	void LLamarCurar();
 
+	void LlamarInmune();
+	
+	void LlamarNormal();
+
+	enum class EEstadoZombie
+	{
+		Normal,
+		Explosivo,
+		Curacion,
+		Inmune,
+		Tranquilo
+	};
 
 
+private:
+	// Estrategia actual del zombie
+	EEstadoZombie m_EstadoActual;
 
 
 private:
@@ -64,12 +86,5 @@ public:
 	void DefinirNotificadorZombies(ANotificador_Zombies_1* myNotificador_1);
 
 
-public:
 
-	AEstrategia_Zombie_Explocion* EstrategiaExplosivo;
-	AEstrategia_Zombie_Tranquilo* EstrategiaTranquilo;
-	AEstrategia_Zombie_Curacion* EstrategiaCuracion;
-	AEstrategia_Zombie_Inmune* EstrategiaInmune;
-	AEstrategia_Zombie_Normal* EstrategiaNormal;
-	
 };

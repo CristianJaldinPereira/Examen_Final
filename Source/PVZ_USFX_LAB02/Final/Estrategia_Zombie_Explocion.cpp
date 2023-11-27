@@ -33,7 +33,6 @@ void AEstrategia_Zombie_Explocion::Explotar(AZombie_Explosivo* ZombieActual)
 	GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, TEXT("El zombie esta al limite de explotar"));
 	
 	AZombie_Explosivo* ZombieExplosivo = Cast<AZombie_Explosivo>(ZombieActual);
-	IEstrategia_Zombie_Principal* ZombieExplosivo1 = Cast<IEstrategia_Zombie_Principal>(ZombieActual);
 
 
   

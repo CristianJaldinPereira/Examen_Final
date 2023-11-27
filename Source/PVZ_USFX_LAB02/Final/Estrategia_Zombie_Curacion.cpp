@@ -35,7 +35,7 @@ void AEstrategia_Zombie_Curacion::Curacion(AZombie_Explosivo* ZombieActual)
 
 	AZombie_Explosivo* ZombieExplosivo = Cast<AZombie_Explosivo>(ZombieActual);
 	
-	IEstrategia_Zombie_Principal* ZombieExplosivo1 = Cast<IEstrategia_Zombie_Principal>(ZombieActual);
+
 
 	ZombieExplosivo->energia = ZombieExplosivo->energia + 0.05f;
 
