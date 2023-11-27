@@ -150,9 +150,7 @@ void APVZ_USFX_LAB02GameModeBase::BeginPlay()
 	//ASol* Sol1 = GetWorld()->SpawnActor<ASol>(ASol::StaticClass(), FVector(-400,-50,160), FRotator::ZeroRotator);
 	//ASol* Sol2 = GetWorld()->SpawnActor<ASol>(ASol::StaticClass(), FVector(-450, -50, 160), FRotator::ZeroRotator);
 
-	//Definiendo la posición de los zombies
-	FVector SpawnLocationZombie = FVector(-920.0f, 400.0f, 22.0f);
-
+	
 	//Genera 5 zombies
 	//for (int i = 0; i < 7; i++) {
 	//	//	 Define una posición temporal para el zombie en X
@@ -169,6 +167,9 @@ void APVZ_USFX_LAB02GameModeBase::BeginPlay()
 	//}
 
 
+	////Definiendo la posición de los zombies
+	FVector SpawnLocationZombie = FVector(-920.0f, 400.0f, 22.0f);
+
 	for (int i = 0; i < 7; i++) {
 		//	 Define una posición temporal para el zombie en X
 		SpawnLocationZombie.X += 100;
@@ -176,7 +177,7 @@ void APVZ_USFX_LAB02GameModeBase::BeginPlay()
 
 
 		NuevoZombieExplosivo = GetWorld()->SpawnActor<AZombie_Explosivo>(AZombie_Explosivo::StaticClass(), SpawnLocationZombie, FRotator::ZeroRotator);
-		NuevoZombieExplosivo->Velocidad = 0.1f;
+		NuevoZombieExplosivo->Velocidad = 0.06f;
 
 		ZombiesExplosivos.Add(NuevoZombieExplosivo);
 
@@ -184,7 +185,15 @@ void APVZ_USFX_LAB02GameModeBase::BeginPlay()
 
 	}
 
+	
 
+
+
+
+
+
+
+	
 
 
 

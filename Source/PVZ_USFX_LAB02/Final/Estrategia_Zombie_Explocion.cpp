@@ -35,6 +35,7 @@ void AEstrategia_Zombie_Explocion::Explotar(AZombie_Explosivo* ZombieActual)
 	AZombie_Explosivo* ZombieExplosivo = Cast<AZombie_Explosivo>(ZombieActual);
 	IEstrategia_Zombie_Principal* ZombieExplosivo1 = Cast<IEstrategia_Zombie_Principal>(ZombieActual);
 
+
   
 	FVector Tamano = ZombieExplosivo->MeshZombie->GetRelativeScale3D() + FVector(0.5f, 0.5, 0.5f);
 	ZombieExplosivo->MeshZombie->SetRelativeScale3D(Tamano);

@@ -29,6 +29,7 @@ void AEstrategia_Zombie_Inmune::Tick(float DeltaTime)
 
 void AEstrategia_Zombie_Inmune::Inmune(AZombie_Explosivo* ZombieActual)
 {
+	GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, TEXT("El zombie es inmune"));
 	
 	AZombie_Explosivo* ZombieExplosivo = Cast<AZombie_Explosivo>(ZombieActual);
 	IEstrategia_Zombie_Principal* ZombieExplosivo1 = Cast<IEstrategia_Zombie_Principal>(ZombieActual);

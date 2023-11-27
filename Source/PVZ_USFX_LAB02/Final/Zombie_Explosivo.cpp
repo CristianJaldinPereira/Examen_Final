@@ -9,6 +9,7 @@
 #include "Estrategia_Zombie_Normal.h"
 #include "Estrategia_Zombie_Inmune.h"
 
+
 AZombie_Explosivo::AZombie_Explosivo()
 {
 	PrimaryActorTick.bCanEverTick = true;
@@ -96,5 +97,7 @@ void AZombie_Explosivo::DefinirNotificadorZombies(ANotificador_Zombies_1* myNoti
 {
 	Notificador_1 = myNotificador_1;
 	Notificador_1->SuscribirZombie(this);
+
+	
 
 }
