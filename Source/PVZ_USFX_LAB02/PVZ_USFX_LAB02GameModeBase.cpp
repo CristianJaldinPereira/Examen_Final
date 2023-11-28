@@ -136,9 +136,7 @@ void APVZ_USFX_LAB02GameModeBase::BeginPlay()
 	Patrones();
 	EjemploPatrones();
 
-	// Definición de un objeto de tipo World
-	UWorld* const World = GetWorld();
-
+	
 	//ASpawns* Spawn1 = GetWorld()->SpawnActor<ASpawns>(ASpawns::StaticClass(), FVector(0,0,0), FRotator::ZeroRotator);
 	// 
 	//AZombie* Zombie1 = GetWorld()->SpawnActor<AZombie>(AZombie::StaticClass(), FVector(400.0, 200.0, 100.0), FRotator::ZeroRotator);
@@ -168,25 +166,13 @@ void APVZ_USFX_LAB02GameModeBase::BeginPlay()
 
 
 	////Definiendo la posición de los zombies
-	FVector SpawnLocationZombie = FVector(-920.0f, 400.0f, 22.0f);
-
-	for (int i = 0; i < 7; i++) {
-		//	 Define una posición temporal para el zombie en X
-		SpawnLocationZombie.X += 100;
-		//Aparicion de los zombies
 
 
-		NuevoZombieExplosivo = GetWorld()->SpawnActor<AZombie_Explosivo>(AZombie_Explosivo::StaticClass(), SpawnLocationZombie, FRotator::ZeroRotator);
-		NuevoZombieExplosivo->Velocidad = 0.06f;
+	UWorld* const World = GetWorld();
 
-		ZombiesExplosivos.Add(NuevoZombieExplosivo);
-
-		NuevoZombieExplosivo->DefinirNotificadorZombies(NotificadorZombies_1);
-
-
-	}
-
-	
+	World->GetTimerManager().SetTimer(Temporizador, this, &APVZ_USFX_LAB02GameModeBase::spawnZombie, 2, cantidad);
+	World->GetTimerManager().SetTimer(TemporizadorX, this, &APVZ_USFX_LAB02GameModeBase::spawnZombie, 4, cantidad);
+	World->GetTimerManager().SetTimer(TemporizadorY, this, &APVZ_USFX_LAB02GameModeBase::spawnZombie, 6, cantidad);
 
 
 
@@ -203,7 +189,7 @@ void APVZ_USFX_LAB02GameModeBase::BeginPlay()
 	FVector SpawnLocationPlantTemp = SpawnLocationPlant;
 
 	// Genera 5 plantas
-	for (int i = 0; i < 7; i++)
+	for (int i = 0; i < 5; i++)
 	{
 		//Define una posicion temporal para la planta en X
 		SpawnLocationPlantTemp.X += 100;
@@ -294,25 +280,29 @@ void APVZ_USFX_LAB02GameModeBase::Tick(float DeltaTime)
 	//	}
 	//	TiempoTranscurrido = 0.0f;
 	//}
-
-
-	for (int i = 0; i < 7; i++)
+	
+	
+	if (NuevoZombieExplosivo != nullptr)
 	{
-		if (ZombiesExplosivos[i]->energia <= 50)
+		for (int i = 0; i < 5; i++)
+	{
+		if (ZombiesExplosivos[i]->energia >= 20 && ZombiesExplosivos[i]->energia <= 100000)
 		{
 			NotificadorZombies_1->DefinirEstado("Explosivo");
 		}
-		else if (ZombiesExplosivos[i]->energia <= 90 && ZombiesExplosivos[i]->energia > 50)
+		else if (ZombiesExplosivos[i]->energia <= 15 )
 		{
 			NotificadorZombies_1->DefinirEstado("Curacion");
 		}
 		
-		else if (ZombiesExplosivos[i]->energia == 100)
+		else if (ZombiesExplosivos[i]->energia == 1000000)
 		{
-			NotificadorZombies_1->DefinirEstado("Tranquilo");
+			NotificadorZombies_1->DefinirEstado("Inmune");
 		}
 		
+	 }
 	}
+	
 
 
 
@@ -385,6 +375,30 @@ void APVZ_USFX_LAB02GameModeBase::MostrarEnergiaDePlantas()
 		}
 	}
 
+}
+
+void APVZ_USFX_LAB02GameModeBase::spawnZombie()
+{
+
+	FVector SpawnLocationZombie = FVector(-920.0f, 400.0f, 22.0f);
+
+	
+
+	for (int i = 0; i < 5; i++) {
+		//	 Define una posición temporal para el zombie en X
+		SpawnLocationZombie.X += 100;
+		//Aparicion de los zombies
+
+		
+
+		NuevoZombieExplosivo = GetWorld()->SpawnActor<AZombie_Explosivo>(AZombie_Explosivo::StaticClass(), SpawnLocationZombie, FRotator::ZeroRotator);
+		NuevoZombieExplosivo->Velocidad = 0.06f;
+
+		ZombiesExplosivos.Add(NuevoZombieExplosivo);
+
+		NuevoZombieExplosivo->DefinirNotificadorZombies(NotificadorZombies_1);
+
+	}
 }
 
 

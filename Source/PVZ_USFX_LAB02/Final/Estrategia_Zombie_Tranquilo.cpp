@@ -28,23 +28,23 @@ void AEstrategia_Zombie_Tranquilo::Tick(float DeltaTime)
 void AEstrategia_Zombie_Tranquilo::Explotar(AZombie_Explosivo* ZombieActual)
 {
 
-	GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, TEXT("El zombie esta tranquilo no explotara"));
+	//GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, TEXT("El zombie esta tranquilo no explotara"));
 
 }
 
 void AEstrategia_Zombie_Tranquilo::Curacion(AZombie_Explosivo* ZombieActual)
 {
-	GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, TEXT("El zombie esta tranquilo no se curara"));
+	//GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, TEXT("El zombie esta tranquilo no se curara"));
 
 }
 
 void AEstrategia_Zombie_Tranquilo::Inmune(AZombie_Explosivo* ZombieActual)
 {
-	GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, TEXT("El zombie es inmune"));
+	//GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, TEXT("El zombie es inmune"));
 }
 
 void AEstrategia_Zombie_Tranquilo::Normal(AZombie_Explosivo* ZombieActual)
 {
-	GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, TEXT("El zombie recibira daño"));
+	//GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, TEXT("El zombie recibira daño"));
 }
 

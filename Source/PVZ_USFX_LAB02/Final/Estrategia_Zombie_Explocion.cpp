@@ -30,7 +30,7 @@ void AEstrategia_Zombie_Explocion::Tick(float DeltaTime)
 
 void AEstrategia_Zombie_Explocion::Explotar(AZombie_Explosivo* ZombieActual)
 {
-	GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, TEXT("El zombie esta al limite de explotar"));
+	//GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, TEXT("El zombie esta al limite de explotar"));
 	
 	AZombie_Explosivo* ZombieExplosivo = Cast<AZombie_Explosivo>(ZombieActual);
 

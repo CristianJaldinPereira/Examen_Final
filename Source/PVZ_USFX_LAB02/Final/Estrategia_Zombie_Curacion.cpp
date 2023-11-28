@@ -29,15 +29,13 @@ void AEstrategia_Zombie_Curacion::Tick(float DeltaTime)
 
 void AEstrategia_Zombie_Curacion::Curacion(AZombie_Explosivo* ZombieActual)
 {
-	GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, TEXT("El zombie esta curandose"));
+	//GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, TEXT("El zombie esta curandose"));
 	
-	//AZombie_Explosivo* ZombieExplosivo = dynamic_cast<AZombie_Explosivo*>(dynamic_cast<IEstrategia_Zombie_Principal*>(AZombie_Explosivo) || dynamic_cast<AZombie_Explosivo*>(AZombie_Explosivo));
-
-	AZombie_Explosivo* ZombieExplosivo = Cast<AZombie_Explosivo>(ZombieActual);
+	AZombie_Explosivo* ZombieExplosivo = Cast <AZombie_Explosivo>(ZombieActual);
 	
 
 
-	ZombieExplosivo->energia = ZombieExplosivo->energia + 0.05f;
+	ZombieExplosivo->energia = ZombieExplosivo->energia + 5.f;
 
 }
 

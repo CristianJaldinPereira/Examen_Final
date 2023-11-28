@@ -39,7 +39,7 @@ AZombie::AZombie()
 	MeshZombie->SetRelativeScale3D(FVector(1.f, 1.f, 1.f));
 
 
-	energia = 100;
+	energia = 15;
 	Velocidad = 0.2f;
 
 	Tags.Add(TEXT("Zombie"));

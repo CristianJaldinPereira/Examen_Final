@@ -29,6 +29,6 @@ void AEstrategia_Zombie_Normal::Tick(float DeltaTime)
 
 void AEstrategia_Zombie_Normal::Normal(AZombie_Explosivo* ZombieActual)
 {
-	GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, TEXT("El zombie recibira dano"));
+	//GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, TEXT("El zombie recibira dano"));
 }
 

@@ -35,4 +35,5 @@ public:
 	virtual void Inmune(AZombie_Explosivo* ZombieActual) override {};
 
 	virtual void Normal(AZombie_Explosivo* ZombieActual) override {};
+
 };

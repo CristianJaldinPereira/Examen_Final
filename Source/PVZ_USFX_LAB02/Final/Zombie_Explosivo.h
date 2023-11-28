@@ -57,6 +57,7 @@ public:
 	
 	void LlamarNormal();
 
+
 	enum class EEstadoZombie
 	{
 		Normal,

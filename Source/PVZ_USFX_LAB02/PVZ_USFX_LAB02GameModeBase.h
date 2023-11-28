@@ -45,6 +45,8 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	FTimerHandle Temporizador;
+	FTimerHandle TemporizadorX;
+	FTimerHandle TemporizadorY;
 
 	void Spawn();
 
@@ -52,7 +54,7 @@ public:
 
 
 	int contador2;
-
+	bool cantidad ;
 
 	FVector localizacion;
 
@@ -97,7 +99,10 @@ public:
 
 	void prueba();
 
+	void spawnZombie();
 
+	int contadorZombies = 0;
+	bool contadorZombies2 = true;
 
 	AZombieCubo* NewZombieCubo;
 
