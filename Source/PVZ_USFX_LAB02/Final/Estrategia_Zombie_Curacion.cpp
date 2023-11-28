@@ -35,7 +35,7 @@ void AEstrategia_Zombie_Curacion::Curacion(AZombie_Explosivo* ZombieActual)
 	
 
 
-	ZombieExplosivo->energia = ZombieExplosivo->energia + 5.f;
+	ZombieExplosivo->energia = ZombieExplosivo->energia + 5.0f;
 
 }
 

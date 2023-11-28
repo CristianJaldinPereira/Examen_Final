@@ -66,8 +66,11 @@ void AProyectil::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimit
 
 	if (OtherActor == Zombie) {
 		Zombie->energia -= 1;
+
+		InitialLifeSpan= 1.0f;
 		//GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, FString::Printf(TEXT("Este es un mensaje %i"), Zombie->energia));
-		if (Zombie->energia <= 0) {
+		if (Zombie->energia <= 0) 
+		{
 			Zombie->morir();
 		};
 	}

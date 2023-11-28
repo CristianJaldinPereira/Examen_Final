@@ -51,6 +51,8 @@ void AZombie_Explosivo::BeginPlay()
 		Estrategia = EstrategiaNormal;
 		LlamarNormal();
 	}
+	
+
 
 }
 
@@ -108,23 +110,29 @@ void AZombie_Explosivo::Mutar()
  
 	FString Estado = Notificador_1->GetEstado();
 
-	if (!Estado.Compare("Inmune"))
+	if (!Estado.Compare("Normal"))
 	{
 		//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Inmune"));
-		Estrategia = EstrategiaInmune;
-		LlamarInmune();
+		Estrategia = EstrategiaNormal;
+		LlamarNormal();
 	}
-	//else if (!Estado.Compare("Explosivo"))
-	//{
-	//	//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("A punto de explotar"));
-	//	Estrategia = EstrategiaExplosivo;
-	//	LLamarExplotar();
-	//}
+	else if (!Estado.Compare("Explosivo"))
+	{
+		//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("A punto de explotar"));
+		Estrategia = EstrategiaExplosivo;
+		LLamarExplotar();
+	}
 	else if (!Estado.Compare("Curacion"))
 	{
 		//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Curandose"));
 		Estrategia = EstrategiaCuracion;
 		LLamarCurar();
+	}
+	else if (!Estado.Compare("Inmune"))
+	{
+		//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Curandose"));
+		Estrategia = EstrategiaInmune;
+		LlamarInmune();
 	}
 }
 

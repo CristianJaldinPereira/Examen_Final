@@ -39,7 +39,8 @@ AZombie::AZombie()
 	MeshZombie->SetRelativeScale3D(FVector(1.f, 1.f, 1.f));
 
 
-	energia = 15;
+	energia = 10;
+	
 	Velocidad = 0.2f;
 
 	Tags.Add(TEXT("Zombie"));
@@ -123,7 +124,7 @@ void AZombie::NotifyHit(UPrimitiveComponent* MyComp, AActor* Other, UPrimitiveCo
 		//GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, FString::Printf(TEXT("Este es un mensaje")));
 		Other->Destroy();
 		//GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, FString::Printf(TEXT("Nombre del otro actor: %s"), *Other->GetName()));
-		energia = energia -10;
+		energia = energia -1;
 	}
 	//Destroy();
 	/*GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, FString::Printf(TEXT("Este es un mensaje")));

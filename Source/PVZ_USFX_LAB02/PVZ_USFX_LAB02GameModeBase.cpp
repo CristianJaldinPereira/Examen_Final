@@ -286,16 +286,20 @@ void APVZ_USFX_LAB02GameModeBase::Tick(float DeltaTime)
 	{
 		for (int i = 0; i < 5; i++)
 	{
-		if (ZombiesExplosivos[i]->energia >= 20 && ZombiesExplosivos[i]->energia <= 100000)
+		if (ZombiesExplosivos[i]->energia >= 20 && ZombiesExplosivos[i]->energia <= 25)
 		{
 			NotificadorZombies_1->DefinirEstado("Explosivo");
 		}
-		else if (ZombiesExplosivos[i]->energia <= 15 )
+		else if (ZombiesExplosivos[i]->energia <= 15)
+		{
+			NotificadorZombies_1->DefinirEstado("Normal");
+		}
+		else if (ZombiesExplosivos[i]->energia >= 15 && ZombiesExplosivos[i]->energia <= 20)
 		{
 			NotificadorZombies_1->DefinirEstado("Curacion");
 		}
 		
-		else if (ZombiesExplosivos[i]->energia == 1000000)
+		else if (ZombiesExplosivos[i]->energia <= 1000000)
 		{
 			NotificadorZombies_1->DefinirEstado("Inmune");
 		}

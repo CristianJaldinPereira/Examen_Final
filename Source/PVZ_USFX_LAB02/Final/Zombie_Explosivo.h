@@ -49,13 +49,15 @@ public:
 
 	void SetEstrategia(AActor* Estrategia_);
 
+	void LlamarNormal();
+
 	void LLamarExplotar();
 
 	void LLamarCurar();
 
 	void LlamarInmune();
 	
-	void LlamarNormal();
+
 
 
 	enum class EEstadoZombie
