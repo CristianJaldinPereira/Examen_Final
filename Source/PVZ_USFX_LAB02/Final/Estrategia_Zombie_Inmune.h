@@ -23,15 +23,13 @@ protected:
 
 public:	
 	// Called every frame
-
+	int EstaReciviendoDanio;
 
 	
 
 	virtual void Tick(float DeltaTime) override;
 
 	virtual void Inmune(AZombie_Explosivo* ZombieActual) override;
-
-	virtual void Explotar(AZombie_Explosivo* ZombieActual) override {};
 
 	virtual void Curacion(AZombie_Explosivo* ZombieActual) override {};
 

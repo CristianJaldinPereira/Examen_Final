@@ -3,7 +3,8 @@
 
 #include "Estrategia_Zombie_Normal.h"
 #include "Zombie_Explosivo.h"
-#include "PVZ_USFX_LAB02/Zombie.h"
+
+
 
 // Sets default values
 AEstrategia_Zombie_Normal::AEstrategia_Zombie_Normal()
@@ -29,6 +30,11 @@ void AEstrategia_Zombie_Normal::Tick(float DeltaTime)
 
 void AEstrategia_Zombie_Normal::Normal(AZombie_Explosivo* ZombieActual)
 {
-	//GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, TEXT("El zombie recibira dano"));
+	GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, TEXT("El zombie recibira dano"));
+	AZombie_Explosivo* ZombieExplosivo = Cast <AZombie_Explosivo>(ZombieActual);
+
+	ZombieExplosivo->energia -= 10;
+
+
 }
 

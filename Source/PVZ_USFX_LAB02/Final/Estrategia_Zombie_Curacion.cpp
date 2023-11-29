@@ -3,7 +3,7 @@
 
 #include "Estrategia_Zombie_Curacion.h"
 #include "Zombie_Explosivo.h"
-#include "PVZ_USFX_LAB02/Zombie.h"
+
 
 // Sets default values
 AEstrategia_Zombie_Curacion::AEstrategia_Zombie_Curacion()
@@ -29,13 +29,14 @@ void AEstrategia_Zombie_Curacion::Tick(float DeltaTime)
 
 void AEstrategia_Zombie_Curacion::Curacion(AZombie_Explosivo* ZombieActual)
 {
-	//GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, TEXT("El zombie esta curandose"));
+	GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, TEXT("El zombie esta curandose"));
 	
 	AZombie_Explosivo* ZombieExplosivo = Cast <AZombie_Explosivo>(ZombieActual);
 	
+	
+		ZombieExplosivo->energia += 10;
+	
 
-
-	ZombieExplosivo->energia = ZombieExplosivo->energia + 5.0f;
 
 }
 

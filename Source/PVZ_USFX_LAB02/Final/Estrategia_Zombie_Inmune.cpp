@@ -3,7 +3,7 @@
 
 #include "Estrategia_Zombie_Inmune.h"
 #include "Zombie_Explosivo.h"
-#include "PVZ_USFX_LAB02/Zombie.h"
+
 
 // Sets default values
 AEstrategia_Zombie_Inmune::AEstrategia_Zombie_Inmune()
@@ -34,7 +34,7 @@ void AEstrategia_Zombie_Inmune::Inmune(AZombie_Explosivo* ZombieActual)
 	
 	GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, TEXT("El zombie tiene vida y es inmune"));
 
-	ZombieExplosivo->energia += 1000000;
+	ZombieExplosivo->energia = 50;
 
 }
 

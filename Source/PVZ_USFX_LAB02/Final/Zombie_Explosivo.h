@@ -16,8 +16,6 @@
  * 
  */
 class ANotificador_Zombies_1;
-class AEstrategia_Zombie_Explocion;
-class AEstrategia_Zombie_Tranquilo;
 class AEstrategia_Zombie_Curacion;
 class AEstrategia_Zombie_Normal;
 class AEstrategia_Zombie_Inmune; 
@@ -35,8 +33,6 @@ public:
 	virtual void Tick(float DeltaTime) override;
 public:
 
-	AEstrategia_Zombie_Explocion* EstrategiaExplosivo;
-	AEstrategia_Zombie_Tranquilo* EstrategiaTranquilo;
 	AEstrategia_Zombie_Curacion* EstrategiaCuracion;
 	AEstrategia_Zombie_Inmune* EstrategiaInmune;
 	AEstrategia_Zombie_Normal* EstrategiaNormal;
@@ -51,8 +47,6 @@ public:
 
 	void LlamarNormal();
 
-	void LLamarExplotar();
-
 	void LLamarCurar();
 
 	void LlamarInmune();
@@ -63,10 +57,8 @@ public:
 	enum class EEstadoZombie
 	{
 		Normal,
-		Explosivo,
 		Curacion,
 		Inmune,
-		Tranquilo
 	};
 
 
@@ -80,6 +72,8 @@ private:
 	ANotificador_Zombies_1* Notificador_1;
 
 public:
+	
+
 	virtual void Destroyed() override;
 
 	virtual void ActualizarZombies(class APublicador_Zombies* Publicador_Zombies) override;

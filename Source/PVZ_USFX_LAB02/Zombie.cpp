@@ -39,7 +39,7 @@ AZombie::AZombie()
 	MeshZombie->SetRelativeScale3D(FVector(1.f, 1.f, 1.f));
 
 
-	energia = 10;
+	energia = 100;
 	
 	Velocidad = 0.2f;
 

@@ -44,11 +44,11 @@
 #include "Ejemplo/State/State_Principal.h"
 
 
-#include "Final/Estrategia_Zombie_Tranquilo.h"
-#include "Final/Estrategia_Zombie_Explocion.h"
+
 #include "Final/Zombie_Explosivo.h"
 #include "Final/Estrategia_Zombie_Curacion.h"
-
+#include "Final/Estrategia_Zombie_Normal.h"
+#include "Final/Estrategia_Zombie_Inmune.h"
 #include "Final/Notificador_Zombies_1.h"
 
 
@@ -282,31 +282,55 @@ void APVZ_USFX_LAB02GameModeBase::Tick(float DeltaTime)
 	//}
 	
 	
-	if (NuevoZombieExplosivo != nullptr)
+	/*if (NuevoZombieExplosivo != nullptr)
 	{
 		for (int i = 0; i < 5; i++)
 	{
-		if (ZombiesExplosivos[i]->energia >= 20 && ZombiesExplosivos[i]->energia <= 25)
-		{
-			NotificadorZombies_1->DefinirEstado("Explosivo");
-		}
-		else if (ZombiesExplosivos[i]->energia <= 15)
+		if (ZombiesExplosivos[i]->energia >= 100)
 		{
 			NotificadorZombies_1->DefinirEstado("Normal");
-		}
-		else if (ZombiesExplosivos[i]->energia >= 15 && ZombiesExplosivos[i]->energia <= 20)
-		{
-			NotificadorZombies_1->DefinirEstado("Curacion");
 		}
 		
 		else if (ZombiesExplosivos[i]->energia <= 1000000)
 		{
 			NotificadorZombies_1->DefinirEstado("Inmune");
 		}
+
+		else if (ZombiesExplosivos[i]->energia >= 15 && ZombiesExplosivos[i]->energia <= 20)
+		{
+			NotificadorZombies_1->DefinirEstado("Curacion");
+		}
+		
 		
 	 }
+	}*/
+	if (NuevoZombieExplosivo != nullptr)
+	{
+		for (int i = 0; i < 5; i++)
+		{
+			// Comprueba si la distancia y es igual a -106.30
+			if (ZombiesExplosivos[i]->GetActorLocation().Y == -106.30f) {
+				// Activa la curacion
+				NotificadorZombies_1->DefinirEstado("Curacion");
+
+			}
+			// Comprueba el estado de energia del zombie
+			if (ZombiesExplosivos[i]->energia >= 100)
+			{
+				NotificadorZombies_1->DefinirEstado("Normal");
+			}
+
+			else if (ZombiesExplosivos[i]->energia <= 50)
+			{
+				NotificadorZombies_1->DefinirEstado("Inmune");
+			}
+			else if (ZombiesExplosivos[i]->energia <= 50)
+			{
+				NotificadorZombies_1->DefinirEstado("Curacion");
+			}
+
+		}
 	}
-	
 
 
 

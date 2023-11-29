@@ -92,7 +92,7 @@ public:
 
 	ALanza_Guisantes* NuevaPlantaGuisante;
 
-
+	
 
 	int FilaActual;
 	int ColumnaActual;

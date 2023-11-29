@@ -65,7 +65,7 @@ void AProyectil::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimit
 	Zombie = Cast<AZombie>(OtherActor);
 
 	if (OtherActor == Zombie) {
-		Zombie->energia -= 1;
+		Zombie->energia -= 10;
 
 		InitialLifeSpan= 1.0f;
 		//GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, FString::Printf(TEXT("Este es un mensaje %i"), Zombie->energia));
