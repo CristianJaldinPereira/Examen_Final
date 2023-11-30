@@ -33,16 +33,7 @@ void AEstrategia_Zombie_Curacion::Curacion(AZombie_Explosivo* ZombieActual)
 	
 	AZombie_Explosivo* ZombieExplosivo = Cast <AZombie_Explosivo>(ZombieActual);
 	
-	
-
-	if (ZombieExplosivo->GetActorLocation().Y <= -145.69) {
-		
-			ZombieExplosivo->energia += 20;
-		
-
-	}
-	
-		
+	ZombieExplosivo->energia += 10;
 
 }
 
