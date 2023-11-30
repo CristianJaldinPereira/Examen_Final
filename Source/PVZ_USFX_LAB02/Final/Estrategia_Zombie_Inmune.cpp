@@ -34,7 +34,12 @@ void AEstrategia_Zombie_Inmune::Inmune(AZombie_Explosivo* ZombieActual)
 	
 	GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, TEXT("El zombie tiene vida y es inmune"));
 
-	ZombieExplosivo->energia = 50;
+
+	if (ZombieExplosivo->GetActorLocation().Y >= -145.69) {
+		ZombieExplosivo->energia = 50;
+	}
+	
+	//ZombieExplosivo->SetCanBeDamaged(true);
 
 }
 

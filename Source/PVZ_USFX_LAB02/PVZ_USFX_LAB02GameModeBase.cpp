@@ -308,23 +308,18 @@ void APVZ_USFX_LAB02GameModeBase::Tick(float DeltaTime)
 	{
 		for (int i = 0; i < 5; i++)
 		{
-			// Comprueba si la distancia y es igual a -106.30
-			if (ZombiesExplosivos[i]->GetActorLocation().Y == -106.30f) {
-				// Activa la curacion
-				NotificadorZombies_1->DefinirEstado("Curacion");
-
-			}
+			
 			// Comprueba el estado de energia del zombie
 			if (ZombiesExplosivos[i]->energia >= 100)
 			{
 				NotificadorZombies_1->DefinirEstado("Normal");
 			}
 
-			else if (ZombiesExplosivos[i]->energia <= 50)
+			else if (ZombiesExplosivos[i]->GetActorLocation().Y >= -145.69 && ZombiesExplosivos[i] -> energia <= 50)
 			{
 				NotificadorZombies_1->DefinirEstado("Inmune");
 			}
-			else if (ZombiesExplosivos[i]->energia <= 50)
+			else if (ZombiesExplosivos[i]->GetActorLocation().Y <= -145.69 && ZombiesExplosivos[i]->energia <= 50)
 			{
 				NotificadorZombies_1->DefinirEstado("Curacion");
 			}
